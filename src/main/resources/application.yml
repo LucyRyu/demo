@@ -1,0 +1,43 @@
+spring.datasource.driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+spring.datasource.url: jdbc:log4jdbc:mysql://127.0.0.1:53306/demo
+spring.datasource.connectionProperties: useSSL=false;useUnicode=yes;characterEncoding=UTF-8;serverTimezone=Asia/Seoul;zeroDateTimeBehavior=convertToNull
+
+spring.datasource.username: root
+spring.datasource.password: 123455
+spring.datasource.testOnBorrow: true
+spring.datasource.validationQuery: SELECT 1
+spring.datasource.test-while-idle: true
+spring.datasource.time-between-eviction-runs-millis: 30000
+spring.datasource.max-wait-millis: 28800000
+
+spring.thymeleaf.mode: LEGACYHTML5
+
+value: test
+
+---
+
+spring:
+  profiles: local
+server:
+  port: 8080
+  
+value: local
+
+---
+
+spring:
+  profiles: dev
+server:
+  port: 8080
+  
+value: dev
+
+---
+
+spring:
+  profiles: prod
+server:
+  port: 8080
+  
+value: prod
